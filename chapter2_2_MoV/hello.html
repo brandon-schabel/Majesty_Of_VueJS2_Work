@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Hello Vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- display in HTML, the Vue message variable -->
+        <h1>{{ message }}</h1>
+        <!-- below we are binding the value of an input box to the value of the message variable -->
+        <input v-model="message">
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script>
+        // object data, we will use that to store variables that we will use to display things.
+        var data = {
+            message: 'Greetings your majesty!'
+        };
+        new Vue({
+            el: '#app',
+            data: data
+    })
+</script>
+
+</html>

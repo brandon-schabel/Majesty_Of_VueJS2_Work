@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Hello Vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+</body>
+Getting Started 5
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script>
+        // object data, we will use that to store variables that we will use to display things.
+        var data = {
+            message: 'Greetings your majesty!'
+        };
+        new Vue({
+            el: '#app',
+            data: data
+    })
+</script>
+
+</html>

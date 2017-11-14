@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Hello Vue</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- show if there is no message -->
+        <h1 v-if="!message">You must send a message for help!</h1>
+        <textarea v-model="message"></textarea>
+
+        <!--
+            An element with v-show, with v-if, the element will not remain in the DOM
+        -->
+        <button v-if="message">
+            send word to allies for help!
+        </button>
+
+        <pre>
+            <!--
+                The output of {{ $data }} is bound with Vue data and will get
+                updated on every change, this will show raw JSON data in html.
+            --> 
+
+            {{ $data }}
+        </pre>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Our king is dead! Send help!'
+        }
+    })
+</script>
+
+</html>
