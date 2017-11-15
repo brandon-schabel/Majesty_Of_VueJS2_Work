@@ -1,0 +1,2 @@
+Computed properties work similiar to functions, however, everytime a dependency
+of a computer property changes the value of the computed property is recalculated

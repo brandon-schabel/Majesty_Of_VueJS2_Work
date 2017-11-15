@@ -1,0 +1,3 @@
+In this chapter we build a calculator app
+
+I also covered 5.3 key modifiers in this one.
