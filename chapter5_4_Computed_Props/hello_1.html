@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link href="../vendor/bootstrap.min.css" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- b variable is the return result of the computed function "b" -->
+        <h2> a={{a}} b={{b}}</h2>
+        <!-- v-model.number makes sure
+            the input is a number -->
+        <input v-model.number="a">
+        <pre>
+                    {{ $data }}
+        </pre>
+    </div>
+</body>
+
+<script src="../vendor/vue.min.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '.container',
+        data: {
+            a: 1,
+        },
+        computed: {
+            // a computed getter
+            b: function () {
+                //return this.a + 1
+                return parseFloat(this.a) + 1
+            }
+        }
+    });
+</script>
+
+</html>
