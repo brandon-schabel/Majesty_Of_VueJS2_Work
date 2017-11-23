@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <link href="../vendor/bootstrap.min.css" rel="stylesheet">
+    <title>Hello Vue</title>
+</head>
+
+<body>
+    <div class="container">
+        <story plot="My horse is amazing"></story>
+        <story plot="The new Tesla Roadster is Amazing"></story>
+        <story plot="I have a cat named Beanz"></story>
+    </div>
+</body>
+
+<script src="../vendor/vue.min.js"></script>
+
+<template id="story-template">
+    <h1>{{ plot }}</h1>
+</template>
+
+<script type="text/javascript">
+    Vue.component('story', {
+        props: ['plot'], // we pass a plot everytime we call this element
+        template: "#story-template"
+    });
+</script>
+
+<script type="text/javascript">
+    new Vue({
+        el: '.container',
+    })
+</script>
+
+</html>

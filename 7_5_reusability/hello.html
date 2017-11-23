@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link href="../vendor/bootstrap.min.css" rel="stylesheet">
+    <title>Awesome Stories</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lets hear some stories!</h1>
+        <div>
+            <h3>Alex's stories</h3>
+            <ul class="list-group">
+                <story v-for="story in storiesBy('Alex')" :story="story"></story>
+            </ul>
+            <h3>John's stories</h3>
+            <ul class="list-group">
+                <story v-for="story in storiesBy('John')" :story="story"></story>
+            </ul> 
+            <div class="form-group">
+                <label for="query">What are you looking for?</label>
+                <input v-model="query" class="form-control">
+            </div>
+            <h3>Search results:</h3>
+            <ul class="list-group">
+                <story v-for="story in search" :story="story"></story>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script src="../vendor/vue.min.js"></script>
+
+<script type="text/javascript">
+    Vue.component('story', {
+        props: ['story'], // we pass a plot everytime we call this element
+        template: "#story-template"
+    });
+
+    new Vue({
+        el: '.container',
+    })
+</script>
+
+</html>

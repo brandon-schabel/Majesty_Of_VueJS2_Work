@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <link href="../vendor/bootstrap.min.css" rel="stylesheet">
+    <title>Awesome Stories</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- you can also pass in objects instead of just  variables -->
+        <story v-bind:story="{plot: 'My horse is amazing.', writer: 'Mr. Weebl'}">
+        </story>
+        <story v-bind:story="{plot: 'Narwhals invented Shish Kebab.', writer: 'Mr. Weebl'}">
+        </story>
+        <story v-bind:story="{plot: 'The dark side of the Force is stronger.', writer: 'Darth Vader'}"></story>
+        </story>
+    </div>
+    <template id="story-template">
+            <h1>{{ story.writer }} said "{{story.plot}}"</h1>
+    </template>        
+</body>
+
+<script src="../vendor/vue.min.js"></script>
+
+<script type="text/javascript">
+    Vue.component('story', {
+        props: ['story'], // we pass a plot everytime we call this element
+        template: "#story-template"
+    });
+
+    new Vue({
+        el: '.container',
+    })
+</script>
+
+</html>
