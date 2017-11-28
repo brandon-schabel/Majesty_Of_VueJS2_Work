@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link href="../vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap.min.css" rel="stylesheet">
     <title>Awesome Stories</title>
 </head>
 
@@ -16,7 +16,7 @@
             <h3>John's stories</h3>
             <ul class="list-group">
                 <story v-for="story in storiesBy('John')" :story="story"></story>
-            </ul> 
+            </ul>
             <div class="form-group">
                 <label for="query">What are you looking for?</label>
                 <input v-model="query" class="form-control">
@@ -29,7 +29,7 @@
     </div>
 </body>
 
-<script src="../vendor/vue.min.js"></script>
+<script src="../../vendor/vue.min.js"></script>
 
 <script type="text/javascript">
     Vue.component('story', {

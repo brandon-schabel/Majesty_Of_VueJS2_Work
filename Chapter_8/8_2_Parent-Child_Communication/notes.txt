@@ -1,0 +1,1 @@
+Parent component cn listen to the events emitted from child component using v-on in template, where child component is used

@@ -1,0 +1,17 @@
+In this chapter we cover events and listeners
+in 8_1 we create a counter and a vote button, when the button is click it emits an even named 'vote'.
+There is also an event listener for the event which increases each time the even is triggered
+
+we used the the created lifecycle hook in 8_1 but  there are many more, they will be liusted below
+beforeCreate    After the instance has just been initialized, before data observation and event/watcher setup.
+created         After the instance is created.
+beforeMount     Right before the mounting begins.
+mounted         After the instance has just been mounted to the DOM.
+beforeUpdate    When the data changes, before the virtual DOM is re-rendered
+                and patched.
+updated         After a data change causes the virtual DOM to be re-rendered
+                a  nd patched.
+activated       When a kept-alive component is activated.
+deactivated     When a kept-alive component is deactivated.
+beforeDestroy   Right before a Vue instance is destroyed.
+destroyed       After a Vue instance has been destroyed.

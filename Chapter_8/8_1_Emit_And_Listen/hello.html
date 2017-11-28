@@ -1,22 +1,39 @@
 <html>
 
 <head>
-        <link href="../vendor/bootstrap.min.css" rel="stylesheet">
-    <title>Hello Vue</title>
+    <link href="../../vendor/bootstrap.min.css" rel="stylesheet">
+    <title>Emit and Listen</title>
 </head>
 
 <body>
-    <div id="app">
+    <div class="container text-center">
+        <p style="font-size: 140px;">
+            {{ votes }}
+        </p>
+        <button class="btn btn-primary" @click="vote">Vote</button>
     </div>
 </body>
 
-<script src="../vendor/vue.min.js"></script>
+<script src="../../vendor/vue.min.js"></script>
 
 <script type="text/javascript">
     new Vue({
-        el: '#app',
+        el: '.container',
         data: {
-            message: 'Our king is dead!'
+            votes: 0
+        },
+        methods:
+            {
+                vote: function (writer) {
+                    this.$emit('voted')
+                },
+            },
+        // the event listener is registered within the "created" lifecycle hook
+        // "this" is bound to Vue instance within vote method/created hook
+        created() {
+            this.$on('voted', function (button) {
+                this.votes++
+            })
         }
     })
 </script>

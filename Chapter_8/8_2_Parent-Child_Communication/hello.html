@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <link href="../../vendor/bootstrap.min.css" rel="stylesheet">
+    <title>Emit and Listen</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <p style="font-size: 140px;">
+            {{ votes }}
+        </p>
+        <food @voted="countVote" name="Cheeseburger"></food>
+    </div>
+
+    <template id="food">
+        <button class="btn btn-default" @click="vote">{{ name }}</button>
+    </template>
+</body>
+
+<script src="../../vendor/vue.min.js"></script>
+
+<script type="text/javascript">
+    Vue.component('food', {
+        // when button is clicked, it will emit a voted event
+        template: '#food',
+        props: ['name'],
+        methods: {
+            vote: function () {
+                this.$emit('voted')
+            }
+        },
+    })
+    new Vue({
+        el: '.container',
+        data: {
+            votes: 0
+        },
+        methods:
+            {
+                countVote: function() {
+                    this.votes++
+                }
+            }
+    })
+</script>
+
+</html>

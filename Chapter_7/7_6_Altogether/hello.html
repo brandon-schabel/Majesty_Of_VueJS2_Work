@@ -30,26 +30,26 @@
     </template>
 </body>
 
-<script src="../vendor/vue.min.js"></script>
+<script src="../../vendor/vue.min.js"></script>
 <script type="text/javascript">
     Vue.component('story', {
         template: "#story-template",
         props: ['story', 'favorite'],
         methods: {
-            upvote: function() {
+            upvote: function () {
                 this.story.upvotes += 1;
                 this.story.voted = true;
             },
-            removeVote: function() {
+            removeVote: function () {
                 this.story.upvotes -= 1;
                 this.story.voted = false;
             },
-            setFavorite: function() {
+            setFavorite: function () {
                 this.favorite = this.story;
             }
         },
         computed: {
-            isFavorite: function() {
+            isFavorite: function () {
                 return this.story == this.favorite;
             }
         }
