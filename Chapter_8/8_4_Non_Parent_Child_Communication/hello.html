@@ -86,9 +86,7 @@
                     }
                     bus.$emit('reset')
                 },
-                stop: function () {
-                    bus.$off(['voted'])
-                }
+                
             },
         created() {
             bus.$on('voted', this.countVote)
